@@ -1,7 +1,7 @@
 
 import { repository } from "@loopback/repository";
 import { User } from "../models/user";
-import { get, post, requestBody } from "@loopback/rest";
+import { get, post, requestBody, param } from "@loopback/rest";
 import { UserRepository } from "../repositories/user.repository";
 
 //post - registration
@@ -12,9 +12,15 @@ export class UserController {
         @repository(UserRepository.name) private userRepo: UserRepository){}
     
         @get('/user')
-        async getAllPizzas(): Promise<Array<User>>{
+        async getAllUsers(): Promise<Array<User>>{
           return await this.userRepo.find();
         }
+
+        @get('/user/{id}')
+        async findById(@param.path.number('id') id: number): Promise<User> {
+          return await this.userRepo.findById(id);
+        }
+      
 }
 
 

@@ -21,8 +21,11 @@ let UserController = class UserController {
     constructor(userRepo) {
         this.userRepo = userRepo;
     }
-    async getAllPizzas() {
+    async getAllUsers() {
         return await this.userRepo.find();
+    }
+    async findById(id) {
+        return await this.userRepo.findById(id);
     }
 };
 __decorate([
@@ -30,7 +33,14 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], UserController.prototype, "getAllPizzas", null);
+], UserController.prototype, "getAllUsers", null);
+__decorate([
+    rest_1.get('/user/{id}'),
+    __param(0, rest_1.param.path.number('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "findById", null);
 UserController = __decorate([
     __param(0, repository_1.repository(user_repository_1.UserRepository.name)),
     __metadata("design:paramtypes", [user_repository_1.UserRepository])
