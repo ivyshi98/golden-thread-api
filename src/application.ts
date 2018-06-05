@@ -39,7 +39,7 @@ export class GoldenThreadApiApplication extends BootMixin(RepositoryMixin(RestAp
       connector: 'loopback-connector-mysql',
       host: 'localhost',
       port: 3306,
-      database: 'golden_thread',
+      database: 'golden_thread', 
       user: 'root',
       password:'Qaz123pl,'
     });

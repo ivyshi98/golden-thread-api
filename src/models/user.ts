@@ -2,7 +2,9 @@ import { Entity, model, property } from "@loopback/repository";
 
 //model to be persisted, extend entity
 
-@model()
+@model({
+    name: "user"
+})
 export class User extends Entity{
     @property({
         type: 'number',
