@@ -35,7 +35,13 @@ export class GoldenThreadApiApplication extends BootMixin(RepositoryMixin(RestAp
     //in memory database, will refresh every time 
     var dataSourceConfig = new juggler.DataSource({
       name: "db",
-      connector: "memory"
+      //connector: "memory"
+      connector: 'loopback-connector-mysql',
+      host: 'localhost',
+      port: 3306,
+      database: 'golden_thread',
+      user: 'root',
+      password:'Qaz123pl,'
     });
     this.dataSource(dataSourceConfig);
   }
