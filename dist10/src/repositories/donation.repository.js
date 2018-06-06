@@ -15,37 +15,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const repository_1 = require("@loopback/repository");
 const core_1 = require("@loopback/core");
 const loopback_datasource_juggler_1 = require("loopback-datasource-juggler");
-const user_1 = require("../models/user");
-let UserRepository = class UserRepository extends repository_1.DefaultCrudRepository {
+const donation_1 = require("../models/donation");
+let DonationRepository = class DonationRepository extends repository_1.DefaultCrudRepository {
     constructor(datasource) {
-        //connect model to datasource 
-        //super: invoking DefaultCrudRepository 
-        super(user_1.User, datasource);
+        super(donation_1.Donation, datasource);
         this.datasource = datasource;
     }
 };
-UserRepository = __decorate([
+DonationRepository = __decorate([
     __param(0, core_1.inject('datasources.db')),
     __metadata("design:paramtypes", [loopback_datasource_juggler_1.DataSource])
-], UserRepository);
-exports.UserRepository = UserRepository;
-// Example of using super 
-// class Animal {
-//    constructor(species: string){
-//   }
-//  }
-// //create different instances of the animal class 
-// //Method 1 
-// var dog = new Animal ("dog");
-// //extend animal class 
-// //same as creating an new object
-// //Extend class when you want to give addtional property to animal 
-// //Method 2 
-// class Dog extends Animal {
-//   constructor(){
-//     //super = parent.constructor 
-//     super("dog");
-//   }
-// }
-// var doggy = new Dog();
-//# sourceMappingURL=user.repository.js.map
+], DonationRepository);
+exports.DonationRepository = DonationRepository;
+//# sourceMappingURL=donation.repository.js.map

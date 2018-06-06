@@ -50,7 +50,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], CharityController.prototype, "getAllCharities", null);
 __decorate([
-    rest_1.get('/charity/{id}') //:id
+    rest_1.get('/charities/{id}') //:id
     ,
     __param(0, rest_1.param.path.number('id')),
     __metadata("design:type", Function),
@@ -58,7 +58,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], CharityController.prototype, "findById", null);
 __decorate([
-    rest_1.get('/charity/{id}/projects'),
+    rest_1.get('/charities/{id}/projects'),
     __param(0, rest_1.param.path.number('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
@@ -69,4 +69,4 @@ CharityController = __decorate([
     __metadata("design:paramtypes", [charity_repository_1.CharityRepository])
 ], CharityController);
 exports.CharityController = CharityController;
-//# sourceMappingURL=charity.controller.js.map
+//# sourceMappingURL=charities.controller.js.map

@@ -32,4 +32,25 @@ export class CharityController {
     //         var charitiesproject = project;
             
     //     }
+
+    @get('/charity/{id}/projects') async getProjectsByCharityId(
+        @param.path.number('id') id: number
+        )//:Promise<User>
+        {
+          console.log(id);
+        }  
+    
+
+        @get('/charity/{id}/donations') async getDonationsByCharityId(
+            @param.path.number('id') id: number, 
+            @param.query.date('date_from') dateFrom: Date
+            )//:Promise<User>
+            {
+              //var userchosen = await this.userRepo.findById(id);
+              //return userchosen.donations;
+              console.log(id);
+              console.log(dateFrom);
+              //var userchosen = this.userRepo.findById(id);
+              //return userchosen;
+            }
 }

@@ -3,9 +3,9 @@ import { Entity, model, property } from "@loopback/repository";
 //model to be persisted, extend entity
 
 @model({
-    name: "user"
+    name: "payment"
 })
-export class User extends Entity{
+export class Payment extends Entity{
     @property({
         type: 'number',
         id:true
@@ -16,25 +16,25 @@ export class User extends Entity{
         type:'string',
         required:true
     })
-    username: string;
+    name_on_card: string;
 
     @property({
         type:'string',
         required:true
     })
-    password: string;
+    card_number: string;
 
     @property({
         type:'string',
         required:true
     })
-    donations: string;
+    expiry_date: string;
 
     @property({
         type:'string',
         required:true
     })
-    dateFrom: string;
+    date: string;
 
     getId(){
         return this.id;

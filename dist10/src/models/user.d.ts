@@ -3,5 +3,7 @@ export declare class User extends Entity {
     id?: number;
     username: string;
     password: string;
+    donations: string;
+    dateFrom: string;
     getId(): number | undefined;
 }

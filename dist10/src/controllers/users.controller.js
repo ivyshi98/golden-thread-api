@@ -32,34 +32,50 @@ let UserController = class UserController {
         //return userchosen.donations;
         console.log(id);
         console.log(dateFrom);
-        var userchosen = this.userRepo.findById(id);
-        return userchosen;
+        //var userchosen = this.userRepo.findById(id);
+        //return userchosen;
+    }
+    async getDonationsByCharityId(id, dateFrom) {
+        //var userchosen = await this.userRepo.findById(id);
+        //return userchosen.donations;
+        console.log(id);
+        console.log(dateFrom);
+        //var userchosen = this.userRepo.findById(id);
+        //return userchosen;
     }
 };
 __decorate([
-    rest_1.get('/user'),
+    rest_1.get('/users'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "getAllUsers", null);
 __decorate([
-    rest_1.get('/user/{id}'),
+    rest_1.get('/users/{id}'),
     __param(0, rest_1.param.path.number('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findById", null);
 __decorate([
-    rest_1.get('/user/{id}/donations'),
+    rest_1.get('/users/{id}/donations'),
     __param(0, rest_1.param.path.number('id')),
     __param(1, rest_1.param.query.date('date_from')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, Date]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "getDonationsByUserId", null);
+__decorate([
+    rest_1.get('/charities/{id}/donations'),
+    __param(0, rest_1.param.path.number('id')),
+    __param(1, rest_1.param.query.date('date_from')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Date]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "getDonationsByCharityId", null);
 UserController = __decorate([
     __param(0, repository_1.repository(user_repository_1.UserRepository.name)),
     __metadata("design:paramtypes", [user_repository_1.UserRepository])
 ], UserController);
 exports.UserController = UserController;
-//# sourceMappingURL=user.controller.js.map
+//# sourceMappingURL=users.controller.js.map
