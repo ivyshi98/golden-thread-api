@@ -42,9 +42,17 @@ let CharityController = class CharityController {
     async getProjectsByCharityId(id) {
         console.log(id);
     }
+    async getDonationsByCharityId(id, dateFrom) {
+        //var userchosen = await this.userRepo.findById(id);
+        //return userchosen.donations;
+        console.log(id);
+        console.log(dateFrom);
+        //var userchosen = this.userRepo.findById(id);
+        //return userchosen;
+    }
 };
 __decorate([
-    rest_1.get('/charities'),
+    rest_1.get('/charity'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
@@ -64,6 +72,14 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], CharityController.prototype, "getProjectsByCharityId", null);
+__decorate([
+    rest_1.get('/charity/{id}/donations'),
+    __param(0, rest_1.param.path.number('id')),
+    __param(1, rest_1.param.query.date('date_from')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Date]),
+    __metadata("design:returntype", Promise)
+], CharityController.prototype, "getDonationsByCharityId", null);
 CharityController = __decorate([
     __param(0, repository_1.repository(charity_repository_1.CharityRepository.name)),
     __metadata("design:paramtypes", [charity_repository_1.CharityRepository])

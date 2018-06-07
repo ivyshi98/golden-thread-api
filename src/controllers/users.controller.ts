@@ -34,18 +34,6 @@ export class UserController {
             //return userchosen;
           }
 
-          @get('/charities/{id}/donations') async getDonationsByCharityId(
-            @param.path.number('id') id: number, 
-            @param.query.date('date_from') dateFrom: Date
-            )//:Promise<User>
-            {
-              //var userchosen = await this.userRepo.findById(id);
-              //return userchosen.donations;
-              console.log(id);
-              console.log(dateFrom);
-              //var userchosen = this.userRepo.findById(id);
-              //return userchosen;
-            }
       
 }
 

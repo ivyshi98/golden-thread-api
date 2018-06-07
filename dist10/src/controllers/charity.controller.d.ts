@@ -6,4 +6,5 @@ export declare class CharityController {
     getAllCharities(): Promise<Array<Charity>>;
     findById(id: number): Promise<Charity>;
     getProjectsByCharityId(id: number): Promise<void>;
+    getDonationsByCharityId(id: number, dateFrom: Date): Promise<void>;
 }

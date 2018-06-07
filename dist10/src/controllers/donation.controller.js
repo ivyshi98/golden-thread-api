@@ -16,19 +16,23 @@ const repository_1 = require("@loopback/repository");
 const donation_1 = require("../models/donation");
 const rest_1 = require("@loopback/rest");
 const donation_repository_1 = require("../repositories/donation.repository");
-//post - registration
-//get - login 
 let DonationController = class DonationController {
     constructor(donationRepo) {
         this.donationRepo = donationRepo;
     }
+    async getDonationHistory() {
+        return await this.donationRepo.find();
+    }
     async recordDonation(donation) {
         return await this.donationRepo.create(donation);
     }
-    async getDonationHistoryById(id) {
-        return await this.donationRepo.findById(id);
-    }
 };
+__decorate([
+    rest_1.get('/donations'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], DonationController.prototype, "getDonationHistory", null);
 __decorate([
     rest_1.post('/donation'),
     __param(0, rest_1.requestBody()),
@@ -36,13 +40,6 @@ __decorate([
     __metadata("design:paramtypes", [donation_1.Donation]),
     __metadata("design:returntype", Promise)
 ], DonationController.prototype, "recordDonation", null);
-__decorate([
-    rest_1.get('/donation'),
-    __param(0, rest_1.param.path.number('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", Promise)
-], DonationController.prototype, "getDonationHistoryById", null);
 DonationController = __decorate([
     __param(0, repository_1.repository(donation_repository_1.DonationRepository.name)),
     __metadata("design:paramtypes", [donation_repository_1.DonationRepository])
